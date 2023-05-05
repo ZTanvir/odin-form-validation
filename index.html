@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Odin Form Validation</title>
+</head>
+<body>
+    <form novalidate>
+        <fieldset>
+            <legend>You need to give the following informtaion to sign up</legend>
+            <div>
+                <label for="mail">Email Address:</label>
+                <input type="email" name="email" id="mail" autocomplete="username">
+                <span class="email-error"></span>
+            </div>
+            <div>
+                <label for="country">Country:</label>
+                <select id="country">
+                    <option value="ch">Switzerland</option>
+                    <option value="fr">France</option>
+                    <option value="de">Germany</option>
+                    <option value="nl">The Netherlands</option>
+                </select>
+            </div>
+            <div>
+                <label for="zip">ZIP:</label>
+                <input type="text" name="zip" id="zip">
+                <span class="zip-error"></span>
+            </div>
+            <div>
+                <label for="pass">Password:</label>
+                <input type="password" name="password" id="pass" autocomplete="new-password">
+                <span class="pass-instruction"></span>
+                <span class="pass-error"></span>
+            </div>
+            <div>
+                <label for="cpass">Confirm password:</label>
+                <input type="password" name="cpassword" id="cpass" autocomplete="new-password">
+                <span class="pass-confirm-error"></span>
+            </div>
+        </fieldset>
+    </form>
+    <script src="./script/script.js"></script>
+</body>
+</html>
