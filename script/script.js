@@ -8,6 +8,10 @@ const zipErrorEl = document.querySelector(".zip-error");
 
 const pswEl = document.querySelector("#pass");
 const passErrorEl = document.querySelector(".pass-error");
+const loweCaseEl = document.querySelector(".lowercase");
+const capitalCaseEl = document.querySelector(".capital");
+const numberEl = document.querySelector(".number");
+const charactersEl = document.querySelector(".characters");
 
 emailEl.addEventListener("input",(e)=>{
     if(emailEl.validity.valid){
@@ -20,6 +24,7 @@ emailEl.addEventListener("input",(e)=>{
         showError(emailEl,emailErrorEl,"email-error");
     }
 })
+
 zipEl.addEventListener("input",(e)=>{
     if(zipEl.validity.valid){
         zipErrorEl.textContent = "";
@@ -34,7 +39,35 @@ zipEl.addEventListener("input",(e)=>{
 })
 
 pswEl.addEventListener("input",(e)=>{
-    console.log(pswEl.value);
+    // Check if lowercase letter present in user input
+    checkCase(/[a-z]/g,loweCaseEl);
+
+    // Check if uppercase letter present in user input
+    checkCase(/[A-Z]/g,capitalCaseEl);
+
+    // Check if number present in user input
+    checkCase(/[0-9]/g,numberEl);
+    
+
+    // Check if there are at least 8 character in user input 
+    if(pswEl.value.length >= 8){
+        charactersEl.classList.remove("invalid");
+        charactersEl.classList.add("valid");
+    }else{
+        charactersEl.classList.remove("valid");
+        charactersEl.classList.add("invalid");
+    } 
+
+    function checkCase (inputMatchWith,caseElement){
+        let loweCaseLetter = inputMatchWith;
+        if(pswEl.value.match(loweCaseLetter)){
+            caseElement.classList.remove("invalid");
+            caseElement.classList.add("valid");
+        }else{
+            caseElement.classList.remove("valid");
+            caseElement.classList.add("invalid");
+        } 
+    }
 })
 
 function showError(inputEl,errorEl,className){
