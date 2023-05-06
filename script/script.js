@@ -6,6 +6,8 @@ const emailErrorEl = document.querySelector(".email-error");
 const zipEl = document.querySelector("#zip");
 const zipErrorEl = document.querySelector(".zip-error");
 
+const pswEl = document.querySelector("#pass");
+const passErrorEl = document.querySelector(".pass-error");
 
 emailEl.addEventListener("input",(e)=>{
     if(emailEl.validity.valid){
@@ -29,7 +31,10 @@ zipEl.addEventListener("input",(e)=>{
         zipErrorEl.textContent = "Entered value must be numbers and at least four digit long.";
         zipErrorEl.className = "zip-error active-error";
     }
-    
+})
+
+pswEl.addEventListener("input",(e)=>{
+    console.log(pswEl.value);
 })
 
 function showError(inputEl,errorEl,className){

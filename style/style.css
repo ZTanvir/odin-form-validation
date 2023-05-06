@@ -117,3 +117,20 @@ input:valid + span::after {
   margin: 2px;
   border-radius: 0 0 5px 5px;
 }
+.invalid {
+  color: crimson;
+}
+.invalid::before {
+  content: "✗";
+}
+
+.valid {
+  color: green;
+}
+.valid::before {
+  content: "✔";
+}
+.invalid::before,
+.invalid::before {
+  margin-right: 10px;
+}
