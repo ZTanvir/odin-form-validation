@@ -12,7 +12,7 @@
         <fieldset>
             <legend>You need to give the following information to sign up</legend>
             <div class="email-account">
-                <label for="mail">Email Address:</label>
+                <label for="mail">Email Address:<span aria-label="required">*</span></label>
                 <input type="email" name="email" id="mail" autocomplete="username" required>
                 <span class="email-error"></span>
             </div>
@@ -27,18 +27,18 @@
                 </select>
             </div>
             <div class="zip-code">
-                <label for="zip">ZIP:</label>
-                <input type="text" name="zip" id="zip" required>
+                <label for="zip">ZIP:<span aria-label="required">*</span></label>
+                <input type="text" name="zip" id="zip" pattern="[0-9]{4}" required>
                 <span class="zip-error"></span>
             </div>
             <div class="password-field">
-                <label for="pass">Password:</label>
-                <input type="password" name="password" id="pass" autocomplete="new-password" minlength="7" required>
+                <label for="pass">Password:<span aria-label="required">*</span></label>
+                <input type="password" name="password" id="pass" autocomplete="new-password" minlength="7" pattern=".{8,}" required>
                 <span class="pass-error"></span>
                 <span class="pass-instruction">Use 8 or more characters with a mix of letters, numbers & symbols</span>
             </div>
             <div class="confirm-password">
-                <label for="cpass">Confirm password:</label>
+                <label for="cpass">Confirm password:<span aria-label="required">*</span></label>
                 <input type="password" name="cpassword" id="cpass" autocomplete="new-password" required>
                 <span class="pass-confirm-error"></span>
             </div>

@@ -109,3 +109,11 @@ input:valid + span::after {
   right: 5px;
   top: 26px;
 }
+.active-error {
+  width: 100%;
+  background-color: crimson;
+  color: white;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 0 0 5px 5px;
+}
