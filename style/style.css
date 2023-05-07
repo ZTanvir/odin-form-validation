@@ -94,11 +94,11 @@ input:required + span::before {
   font-size: 12px;
 }
 
-input:invalid + span::after {
+input:not(#cpass):invalid + span::after {
   content: "✗";
   color: red;
 }
-input:valid + span::after {
+input:not(#cpass):valid + span::after {
   content: "✔";
   color: green;
 }
@@ -117,13 +117,13 @@ input:valid + span::after {
   margin: 2px;
   border-radius: 0 0 5px 5px;
 }
+/* Passsword error message */
 .invalid {
   color: crimson;
 }
 .invalid::before {
   content: "✗";
 }
-
 .valid {
   color: green;
 }
@@ -133,4 +133,21 @@ input:valid + span::after {
 .invalid::before,
 .invalid::before {
   margin-right: 10px;
+}
+/* Confirm password field */
+.invalid-confirm-pass {
+  color: white;
+  background-color: crimson;
+  margin: 2px;
+  border-radius: 5px;
+}
+.invalid-confirm-pass::after {
+  color: crimson;
+  content: "✗";
+}
+.valid-confirm-pass {
+  color: green;
+}
+.valid-confirm-pass::after {
+  content: "✔";
 }

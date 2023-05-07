@@ -13,6 +13,9 @@ const capitalCaseEl = document.querySelector(".capital");
 const numberEl = document.querySelector(".number");
 const charactersEl = document.querySelector(".characters");
 
+const confirmPasswordEl = document.querySelector("#cpass");
+const passConfirmErrorEl = document.querySelector(".pass-confirm-error");
+
 emailEl.addEventListener("input",(e)=>{
     if(emailEl.validity.valid){
         emailErrorEl.textContent = "";
@@ -69,6 +72,23 @@ pswEl.addEventListener("input",(e)=>{
         } 
     }
 })
+
+// Check password and confirm password are same
+confirmPasswordEl.addEventListener("input",(e)=>{
+    if(pswEl.validity.valid){
+        if(pswEl.value === confirmPasswordEl.value){
+            passConfirmErrorEl.classList.add("valid-confirm-pass");
+            passConfirmErrorEl.classList.remove("invalid-confirm-pass");
+            passConfirmErrorEl.textContent = "Password Matched";
+            passConfirmErrorEl.style.padding = "2px";
+        }else if(pswEl.value !== confirmPasswordEl.value){
+            passConfirmErrorEl.classList.remove("valid-confirm-pass");
+            passConfirmErrorEl.classList.add("invalid-confirm-pass");
+            passConfirmErrorEl.textContent = "Password Don't Match";
+        }
+    }
+})
+
 
 function showError(inputEl,errorEl,className){
     if(inputEl.validity.valueMissing){
