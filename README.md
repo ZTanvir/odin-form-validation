@@ -26,6 +26,7 @@ will help you to learn web development at your own pace.
 ## Bugs
 
 - I haven't found yet.If anyone find any just let me know.
+- You can submit the form without matching the password with confirm password.
 
 ### For personal use
 
