@@ -36,7 +36,7 @@ zipEl.addEventListener("input",(e)=>{
         zipErrorEl.textContent = "";
         zipErrorEl.classList.remove("active-error");
     }else if(zipEl.validity.patternMismatch){
-        zipErrorEl.textContent = "Entered value must be numbers and at least four digit long.";
+        zipErrorEl.textContent = "Use 4 digit numbers";
         zipErrorEl.className = "zip-error active-error";
     }
 })
@@ -75,7 +75,12 @@ pswEl.addEventListener("input",(e)=>{
 
 // Check password and confirm password are same
 confirmPasswordEl.addEventListener("input",(e)=>{
-    if(pswEl.validity.valid){
+    if(confirmPasswordEl.value === ""){
+        passConfirmErrorEl.textContent = "";
+        passConfirmErrorEl.style.padding = "0px";
+
+    }
+    else if(pswEl.validity.valid){
         if(pswEl.value === confirmPasswordEl.value){
             passConfirmErrorEl.classList.add("valid-confirm-pass");
             passConfirmErrorEl.classList.remove("invalid-confirm-pass");
