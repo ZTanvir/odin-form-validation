@@ -86,14 +86,16 @@ confirmPasswordEl.addEventListener("input",(e)=>{
             passConfirmErrorEl.classList.remove("invalid-confirm-pass");
             passConfirmErrorEl.textContent = "Password Matched";
             passConfirmErrorEl.style.padding = "2px";
+            confirmPasswordEl.setCustomValidity("");
         }else if(pswEl.value !== confirmPasswordEl.value){
             passConfirmErrorEl.classList.remove("valid-confirm-pass");
             passConfirmErrorEl.classList.add("invalid-confirm-pass");
             passConfirmErrorEl.textContent = "Password Don't Match";
+            confirmPasswordEl.setCustomValidity("Password Don't match");
+
         }
     }
 })
-
 
 function showError(inputEl,errorEl,className){
     if(inputEl.validity.valueMissing){
