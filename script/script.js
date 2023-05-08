@@ -73,7 +73,7 @@ pswEl.addEventListener("input",(e)=>{
     }
 })
 
-// Check password and confirm password are same
+// Check if password and confirm password are same
 confirmPasswordEl.addEventListener("input",(e)=>{
     if(confirmPasswordEl.value === ""){
         passConfirmErrorEl.textContent = "";
